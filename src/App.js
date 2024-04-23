@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import Timer from './Timer';
+import Form from './Form';
 
 function App() {
+
+  var [data, setData] = useState({
+    title: '',
+    nextTitle: '',
+    timer: '',
+    isNegative: false,
+    status: false
+  });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Form data={data} setData={setData} />
+      <Timer data={data} setData={setData} />
     </div>
   );
 }
