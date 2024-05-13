@@ -1,12 +1,16 @@
 var Form = ({data, setData}) => {
 
+    var startClock = () => {
+        setData({...data, status: 'clock'});
+    }
+
     var start = () => {
         var title = (data?.title || '').length ? data.title : 'Ministração';
         var timer = (data?.timer || '').length ? data.timer : '10:00';
-        setData({...data, title: title, timer: timer, status: true});
+        setData({...data, title: title, timer: timer, status: 'timer'});
     }
 
-    return data.status ? <></> : (
+    return data.status != 'form' ? <></> : (
         <>
             <h1>Contador Regressivo</h1>
             <input type="text" placeholder="Título: Ministração" value={data.title} onChange={(e) => setData({...data, title: e.target.value})} />

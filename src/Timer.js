@@ -6,7 +6,7 @@ var Timer = ({data, setData}) => {
 
     useEffect(() => {
         window.interval && clearInterval(window.interval);
-        if (data.status) {
+        if (data.status == 'timer') {
             var timer = (data?.timer || "00:00").split(':');
             var minutes = parseInt(timer[0]);
             var seconds = parseInt(timer[1]);
@@ -37,7 +37,7 @@ var Timer = ({data, setData}) => {
         }        
     });
 
-    return !data.status ? <></> : (
+    return data.status!='timer' ? <></> : (
         <>
             <h1>{data.title}</h1>
             <p className="countdown-timer">{data.isNegative ? '-' : ''}{data.timer}</p>

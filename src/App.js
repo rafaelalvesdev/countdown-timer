@@ -13,7 +13,7 @@ function App() {
     nextTitle: '',
     timer: '',
     isNegative: false,
-    status: false
+    status: 'form'
   });
 
   useEffect (() =>{
