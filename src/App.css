@@ -63,3 +63,17 @@ button{
 .App-link {
   color: #61dafb;
 }
+
+.theme1 {
+  background-color:white;
+  animation: danger 1s linear infinite;
+}
+
+@keyframes danger {
+  50% {background-color:yellow;}
+}
+
+.theme1 .countdown-timer{
+  color:rgb(117, 38, 38);
+}
+
