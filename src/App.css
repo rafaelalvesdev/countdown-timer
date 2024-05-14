@@ -35,6 +35,10 @@ h1{
   font-size: 300px;
 }
 
+.clock {
+  font-size: 300px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -62,4 +66,25 @@ button{
 
 .App-link {
   color: #61dafb;
+}
+
+.theme1 {
+  background-color:rgb(156, 44, 44);
+  animation: danger 1s linear infinite;
+}
+
+@keyframes danger {
+  30% {background-color:rgb(0, 0, 0);}
+}
+
+.theme2 {
+  background-color: rgb(255, 0, 0);
+}
+
+.theme3 {
+  background-color:rgb(255, 71, 71);
+}
+
+.theme4 {
+  background-color:rgb(100, 0, 0);
 }
