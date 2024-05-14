@@ -3,6 +3,7 @@ import './App.css';
 import moment from 'moment';
 import Timer from './Timer';
 import Form from './Form';
+import Clock from './Clock';
 
 function App() {
 
@@ -18,16 +19,22 @@ function App() {
 
   useEffect (() =>{
     var timerCompare = moment(data.timer, 'mm:ss'); 
-    if (timerCompare < moment('05:00', 'mm:ss'))
-    setTheme ('theme1')
-    else if (timerCompare < moment('02:00', 'mm:ss'))
-    setTheme ('theme2')
+    if (data.status == 'timer')
+    if (data.isNegative)
+      setTheme ('theme2')
+    else if (timerCompare < moment('00:04', 'mm:ss'))
+      setTheme ('theme1')
+    else if (timerCompare < moment('00:07', 'mm:ss'))
+    setTheme ('theme3')
+    else if (timerCompare < moment('00:10', 'mm:ss'))
+      setTheme ('theme4')
   }, [data]);
 
   return (
     <div className={"App " + theme}>
       <Form data={data} setData={setData} />
       <Timer data={data} setData={setData} />
+      <Clock data={data} />
     </div>
   );
 }

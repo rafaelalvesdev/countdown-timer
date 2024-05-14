@@ -1,3 +1,5 @@
+import logo from './logo.png';
+
 var Form = ({data, setData}) => {
 
     var startClock = () => {
@@ -16,7 +18,12 @@ var Form = ({data, setData}) => {
             <input type="text" placeholder="Título: Ministração" value={data.title} onChange={(e) => setData({...data, title: e.target.value})} />
             {/* <input type="text" placeholder="Próximo ponto" value={data.nextTitle} onChange={(e) => setData({...data, nextTitle: e.target.value})}  />  */}
             <input type="text" placeholder="Tempo: 10:00" value={data.timer} onChange={(e) => setData({...data, timer: e.target.value})}  />
-            <button onClick={() => start()}>Iniciar</button>
+            <button onClick={() => start()}>Iniciar Regressivo</button>
+            <button onClick={() => startClock()}>Iniciar Relógio</button>
+            
+            <footer>        
+                <img src={logo} className="App-logo" alt="logo" />
+            </footer>
         </>
     );
 
