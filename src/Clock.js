@@ -7,14 +7,14 @@ import moment from 'moment';
 
 var Clock = ({data}) => {
 
-    var [clock, setClock] = useState ('');
+    var [clock, setClock] = useState ('00:00:00');
 
     useEffect(() => {
-        window.interval && clearInterval(window.interval);
+        window.clockInterval && clearInterval(window.clockInterval);
         if (data.status == 'clock') {
             var now = moment().format("HH:mm:ss");
 
-            window.interval = setInterval(() =>
+            window.clockInterval = setInterval(() =>
             setClock(now), 1000);
         };   
     });

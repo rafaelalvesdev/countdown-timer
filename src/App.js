@@ -22,11 +22,11 @@ function App() {
     if (data.status == 'timer')
     if (data.isNegative)
       setTheme ('theme2')
-    else if (timerCompare < moment('00:04', 'mm:ss'))
+    else if (timerCompare < moment('02:30', 'mm:ss'))
       setTheme ('theme1')
-    else if (timerCompare < moment('00:07', 'mm:ss'))
+    else if (timerCompare < moment('05:00', 'mm:ss'))
     setTheme ('theme3')
-    else if (timerCompare < moment('00:10', 'mm:ss'))
+    else if (timerCompare < moment('10:00', 'mm:ss'))
       setTheme ('theme4')
   }, [data]);
 

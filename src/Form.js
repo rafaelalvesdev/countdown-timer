@@ -3,7 +3,8 @@ import logo from './logo.png';
 var Form = ({data, setData}) => {
 
     var startClock = () => {
-        setData({...data, status: 'clock'});
+        var title = (data?.title || '').length ? data.title : 'Ministração';
+        setData({...data, title, status: 'clock'});
     }
 
     var start = () => {
